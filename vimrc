@@ -69,6 +69,10 @@ nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>c <Plug>Kwbd
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" rphan shortcuts
+nmap <silent> <S-H> ^
+nmap <silent> <S-L> $
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
