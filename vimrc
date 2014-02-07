@@ -126,3 +126,5 @@ if filereadable(expand("~/.vimrc.local"))
   " noremap! jj <ESC>
   source ~/.vimrc.local
 endif
+
+" vim: ts=2:sts=2:sw=2:ft=vim
