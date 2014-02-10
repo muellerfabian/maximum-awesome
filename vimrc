@@ -127,6 +127,45 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
+" Folding {{{
+set foldcolumn=1
+set foldnestmax=10
+set foldlevel=0
+set foldminlines=2
+" Toggle fold state between closed and opened.
+"
+" If there is no fold at current line, just moves forward.  If it is present, reverse it's state.
+fu! ToggleFold() " {{{
+  if foldlevel('.') == 0
+    normal! l
+  else
+    if foldclosed('.') < 0
+      . foldclose
+    else
+      . foldopen
+    endif
+  endif
+  echo
+endf " }}}
+
+fu! ToggleFoldRecursive() " {{{
+  if foldlevel('.') == 0
+    normal! l
+  else
+    if foldclosed('.') < 0
+      . foldclose!
+    else
+      . foldopen!
+    endif
+  endif
+  echo
+endf " }}}
+
+" Map this function to Space key.
+noremap <space> :call ToggleFold()<CR>
+noremap <S-space> :call ToggleFold()<CR>
+" }}}
+
 " Go crazy!
 if filereadable(expand("~/.vimrc.local"))
   " In your .vimrc.local, you might like:
@@ -141,4 +180,4 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" vim: ts=2:sts=2:sw=2:ft=vim
+" vim: ts=2:sts=2:sw=2:ft=vim:fdm=marker
