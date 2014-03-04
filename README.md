@@ -28,6 +28,7 @@ peace-loving hippies. Built for Mac OS X.
 * `,h` Clear all search highlighting
 * `[space]` Toggle open/close state of folds
 * `H` and `L` for beginning and end of line (similar semantics to `D`, `C`, etc)
+* [vim-airline](https://github.com/bling/vim-airline).  Please see [vimrc.local](./vimrc.local) for more details on [powerline fonts](https://github.com/Lokaltog/powerline-fonts)
 
 ### tmux
 
