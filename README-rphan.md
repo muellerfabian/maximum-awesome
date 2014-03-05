@@ -4,6 +4,13 @@ In here you'll find my personal revisions to maximum awesome.  I will attempt
 to upstream as much as possible, but some things are personal preferences that
 may not be applicable.
 
+![img](https://raw.github.com/wiki/rphan/maximum-awesome/screenshot.png)
+
+# Differences
+- [vim-airline](https://github.com/bling/vim-airline)
+- Folding support (spacebar will toggle fold state)
+- `H` and `L` (mapped to `^` and `$` respectively)
+
 # Installation
 1. `$ git clone https://github.com/rphan/maximum-awesome.git`
 1. `$ cd maximum-awesome`
