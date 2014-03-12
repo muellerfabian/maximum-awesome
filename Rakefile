@@ -200,10 +200,11 @@ COPIED_FILES = filemap(
 )
 
 LINKED_FILES = filemap(
-  'vim'           => '~/.vim',
-  'tmux.conf'     => '~/.tmux.conf',
-  'vimrc'         => '~/.vimrc',
-  'vimrc.bundles' => '~/.vimrc.bundles'
+  'vim'                         => '~/.vim',
+  'tmux.conf'                   => '~/.tmux.conf',
+  'vimrc'                       => '~/.vimrc',
+  'vimrc.bundles'               => '~/.vimrc.bundles',
+  'tmux-statusbar-airline.conf' => '~/.tmux-statusbar-airline.conf'
 )
 
 desc 'Install these config files.'
