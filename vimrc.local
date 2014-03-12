@@ -40,3 +40,12 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 "   Non-ASCII Font: 13pt Inconsolata for Powerline
 "let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+" Set the tmux statsbar to use airline theme
+let g:tmuxline_preset = {
+  \'a'    : '#S',
+  \'b'    : '#W',
+  \'win'  : ['#I#F', '#W'],
+  \'cwin' : ['#I#F', '#W'],
+  \'x'    : '%a',
+  \'y'    : '%F %R %Z',
+  \'z'    : '#h'}
