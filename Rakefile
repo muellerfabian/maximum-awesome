@@ -196,11 +196,28 @@ exec /Applications/MacVim.app/Contents/MacOS/Vim "$@"
     end
   end
 
+  desc 'Setup Symlinks'
+  task :symlink do
+    step 'symlink'
+
+    LINKED_FILES.each do |orig, link|
+      link_file orig, link
+    end
+
+    COPIED_FILES.each do |orig, copy|
+      cp orig, copy, :verbose => true unless File.exist?(copy)
+    end
+  end
+
   desc 'Install Vundle'
   task :vundle do
     step 'vundle'
     install_github_bundle 'gmarik','vundle'
-    sh '~/bin/vim -c "BundleInstall" -c "q" -c "q"'
+    if File.executable?("~/bin/vim")
+      sh '~/bin/vim -c "BundleInstall" -c "q" -c "q"'
+    else
+      sh 'vim -c "BundleInstall" -c "q" -c "q"'
+    end
   end
 end
 
@@ -235,21 +252,9 @@ task :install do
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:macvim'].invoke
-
+  Rake::Task['install:symlink'].invoke
   # TODO install gem ctags?
   # TODO run gem ctags?
-
-  step 'symlink'
-
-  LINKED_FILES.each do |orig, link|
-    link_file orig, link
-  end
-
-  COPIED_FILES.each do |orig, copy|
-    cp orig, copy, :verbose => true unless File.exist?(copy)
-  end
-
-  # Install Vundle and bundles
   Rake::Task['install:vundle'].invoke
 
   step 'iterm2 colorschemes'
@@ -303,4 +308,15 @@ task :uninstall do
   puts '  rm -rf /Applications/MacVim.app'
 end
 
-task :default => :install
+task :default do
+  if (/darwin/ =~ RUBY_PLATFORM) != nil
+    puts "Installing for MacOSX"
+    Rake::Task['install'].invoke
+  elsif (/linux/ =~ RUBY_PLATFORM) != nil
+    puts "Installing for Linux"
+    Rake::Task['install:symlink'].invoke
+    Rake::Task['install:vundle'].invoke
+  else
+    puts "Unsupported OS"
+  end
+end
