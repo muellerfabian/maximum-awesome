@@ -1,3 +1,9 @@
+# Bob's fork of Maximum Awesome
+
+For more information, see: [README-rphan.md](./README-rphan.md)
+
+![img](https://raw.github.com/wiki/rphan/maximum-awesome/screenshot.png)
+
 # Maximum Awesome
 
 Config files for vim and tmux, lovingly tended by a small subculture of

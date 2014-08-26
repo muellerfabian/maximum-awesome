@@ -7,27 +7,29 @@ may not be applicable.
 ![img](https://raw.github.com/wiki/rphan/maximum-awesome/screenshot.png)
 
 # Differences
+- Linux support!
 - [vim-airline](https://github.com/bling/vim-airline)
 - Folding support (spacebar will toggle fold state)
-- `H` and `L` (mapped to `^` and `$` respectively)
+- `.` Will retain column position so it can be repeated more easily.
+- Many new mappings:
+  - `H` and `L` (mapped to `^` and `$` respectively)
+  - `,h` Clear all search highlighting
 
 # Installation
 1. `$ git clone https://github.com/rphan/maximum-awesome.git`
 1. `$ cd maximum-awesome`
-1. `$ git checkout rphan-custom`
 1. `rake`
 
 # Updating
 
-git pull may not be a fast forward.
+`git pull` should do the trick.
 
-Since I'll be tracking upstream and attempting to push changes back, I will
-aggressively rebase to ensure consistency.  In the event that you're having
-trouble updating, follow these steps:
+In the past, I was tracking upstream as `master` and maintaining my changes in a feature branch.
+Since most of my pull requests are ignored, I'm not going to bother doing that anymore.
 
-1. `$ git checkout rphan-custom`
-1. `$ git fetch --all`
-1. `$ git reset --hard origin/rphan-custom`
+# Future plans
+
+Just check out my open issues.
 
 # Thanks!
 
