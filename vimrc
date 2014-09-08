@@ -69,6 +69,15 @@ nnoremap <leader>g :GitGutterToggle<CR>
 nnoremap <leader>c <Plug>Kwbd
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" When using :set wrap, the arrow keys will go up/down a visual line where as
+" j/k will go down/up _real_ lines
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
 " rphan shortcuts
 nmap <silent> <S-H> ^
 nmap <silent> <S-L> $
