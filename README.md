@@ -1,4 +1,4 @@
-# Bob's fork of Maximum Awesome
+# Fabi's fork of Bob's fork of Maximum Awesome
 
 For more information, see: [README-rphan.md](./README-rphan.md)
 
